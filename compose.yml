@@ -4,11 +4,11 @@ services:
     container_name: nextjs-course-postgres
     restart: unless-stopped
     ports:
-      - 5432:5432
+      - ${POSTGRES_PORT}:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: nextjs_course_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
     volumes:
       - postgres:/data
 
